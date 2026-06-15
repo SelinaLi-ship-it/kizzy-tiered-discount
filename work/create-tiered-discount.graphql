@@ -1,0 +1,18 @@
+mutation CreateTieredDiscount($codeAppDiscount: DiscountCodeAppInput!) {
+  discountCodeAppCreate(codeAppDiscount: $codeAppDiscount) {
+    codeAppDiscount {
+      discountId
+      title
+      status
+      codes(first: 5) {
+        nodes {
+          code
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

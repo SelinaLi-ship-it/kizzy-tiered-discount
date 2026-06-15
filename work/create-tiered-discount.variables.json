@@ -1,0 +1,20 @@
+{
+  "codeAppDiscount": {
+    "title": "Tiered order discount",
+    "code": "TIERED",
+    "functionHandle": "tiered-order-discount",
+    "discountClasses": ["ORDER"],
+    "startsAt": "2026-06-15T00:00:00Z",
+    "appliesOncePerCustomer": false,
+    "appliesOnOneTimePurchase": true,
+    "appliesOnSubscription": false,
+    "context": {
+      "all": "ALL"
+    },
+    "combinesWith": {
+      "orderDiscounts": false,
+      "productDiscounts": false,
+      "shippingDiscounts": true
+    }
+  }
+}

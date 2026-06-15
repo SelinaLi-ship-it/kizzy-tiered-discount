@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: kizzy-tiered-discount
+    runtime: docker
+    healthCheckPath: /auth/login
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/var/data/dev.sqlite
+      - key: SHOPIFY_API_KEY
+        sync: false
+      - key: SHOPIFY_API_SECRET
+        sync: false
+      - key: SHOPIFY_APP_URL
+        sync: false
+      - key: SCOPES
+        value: read_discounts,write_discounts
+    disk:
+      name: shopify-session-data
+      mountPath: /var/data
+      sizeGB: 1

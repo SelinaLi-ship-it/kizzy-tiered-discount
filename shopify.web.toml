@@ -1,0 +1,6 @@
+name = "React Router"
+roles = ["frontend", "backend"]
+webhooks_path = "/webhooks/app/uninstalled"
+[commands]
+predev = "DATABASE_URL=file:./dev.sqlite npm exec prisma generate"
+dev = "DATABASE_URL=file:./dev.sqlite npm exec react-router dev"

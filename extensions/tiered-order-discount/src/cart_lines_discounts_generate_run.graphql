@@ -1,0 +1,12 @@
+query CartInput {
+  cart {
+    cost {
+      subtotalAmount {
+        amount
+      }
+    }
+  }
+  discount {
+    discountClasses
+  }
+}

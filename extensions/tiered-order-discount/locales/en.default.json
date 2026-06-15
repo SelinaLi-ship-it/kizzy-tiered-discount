@@ -1,0 +1,4 @@
+{
+  "name": "Tiered order discount",
+  "description": "Applies a percentage discount by order subtotal."
+}
