@@ -2,7 +2,7 @@
 
 client_id = "5b7045ddd223e8da339e258d1c3eb116"
 name = "Kizzy Tiered Discount"
-application_url = "https://shopify.dev/apps/default-app-home"
+application_url = "https://kizzy-tiered-discount.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -21,7 +21,9 @@ api_version = "2026-07"
   topics = [ "app/scopes_update" ]
 
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [
+  "https://kizzy-tiered-discount.onrender.com/auth/callback"
+]
 
 [build]
 automatically_update_urls_on_dev = true
