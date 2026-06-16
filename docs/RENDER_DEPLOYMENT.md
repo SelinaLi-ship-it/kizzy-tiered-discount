@@ -1,6 +1,6 @@
 # Render deployment guide
 
-This app is ready to deploy as a Docker web service on Render.
+This app is ready to deploy as a Docker web service on Render's free tier for classroom/demo use.
 
 ## 1. Push the project to GitHub
 
@@ -13,8 +13,9 @@ In Render, create a new Blueprint from the repository. Render will read `render.
 The Blueprint creates:
 
 - A Docker web service
-- A 1 GB persistent disk mounted at `/var/data`
-- `DATABASE_URL=file:/var/data/dev.sqlite` for Shopify session storage
+- `DATABASE_URL=file:/tmp/dev.sqlite` for Shopify session storage
+
+This free demo setup does not use a persistent disk. If Render restarts the service, Shopify session data can be lost and the app may need to be opened or reinstalled again.
 
 ## 3. Add secret environment variables
 
@@ -30,7 +31,7 @@ The following variables are already declared in `render.yaml`:
 
 ```text
 NODE_ENV=production
-DATABASE_URL=file:/var/data/dev.sqlite
+DATABASE_URL=file:/tmp/dev.sqlite
 SCOPES=read_discounts,write_discounts
 ```
 
@@ -43,7 +44,7 @@ npm run setup
 npm run start
 ```
 
-`npm run setup` generates Prisma Client and creates the local SQLite session table on the persistent disk.
+`npm run setup` generates Prisma Client and creates the local SQLite session table.
 
 ## 5. Update Shopify app URLs
 
