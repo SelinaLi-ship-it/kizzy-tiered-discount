@@ -12,7 +12,7 @@ In Render, create a new Blueprint from the repository. Render will read `render.
 
 The Blueprint creates:
 
-- A Docker web service
+- A Docker web service on Render's Free instance type
 - `DATABASE_URL=file:/tmp/dev.sqlite` for Shopify session storage
 
 This free demo setup does not use a persistent disk. If Render restarts the service, Shopify session data can be lost and the app may need to be opened or reinstalled again.

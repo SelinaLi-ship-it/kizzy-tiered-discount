@@ -2,6 +2,7 @@ services:
   - type: web
     name: kizzy-tiered-discount
     runtime: docker
+    plan: free
     healthCheckPath: /auth/login
     envVars:
       - key: NODE_ENV
